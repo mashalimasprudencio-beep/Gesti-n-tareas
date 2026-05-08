@@ -1,11 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gestion de Tareas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
+<body class="light-theme">
+    <div id="app">
+        <header>
+            <h1>Gestion de Tareas</h1>
+            <button id="theme-toggle">Cambiar Tema</button>
+        </header>
+
+        <section class="stats-container">
+            <div class="stat-box">Total: <span id="total-tasks">0</span></div>
+            <div class="stat-box">Progreso: <span id="progress-percent">0%</span></div>
+            <div class="stat-box urgent">Urgentes: <span id="urgent-tasks">0</span></div>
+        </section>
+
+        <div class="advanced-controls">
+            <input type="text" id="search-input" placeholder="Buscar tarea...">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="pending">Pendientes</button>
+                <button class="filter-btn" data-filter="completed">Completadas</button>
+            </div>
+        </div>
+
+        <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="Nueva tarea..." required>
+            <select id="priority-select">
+                <option value="baja">Baja</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+            </select>
+            <button type="submit">Agregar</button>
+        </form>
+
+        <ul id="todo-list"></ul>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
